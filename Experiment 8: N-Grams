@@ -1,0 +1,16 @@
+def ngrams(text, n):
+    words = text.split()
+
+    for i in range(len(words) - n + 1):
+        print(tuple(words[i:i+n]))
+
+text = "I love natural language processing"
+
+print("Unigrams:")
+ngrams(text, 1)
+
+print("\nBigrams:")
+ngrams(text, 2)
+
+print("\nTrigrams:")
+ngrams(text, 3)
