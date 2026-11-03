@@ -1,0 +1,14 @@
+
+import nltk
+from nltk.tag import hmm
+
+train_data = [
+    [("The", "DT"), ("boy", "NN"), ("plays", "VBZ")],
+    [("A", "DT"), ("girl", "NN"), ("runs", "VBZ")]
+]
+
+trainer = hmm.HiddenMarkovModelTrainer()
+tagger = trainer.train_supervised(train_data)
+
+sentence = ["The", "girl", "runs"]
+print(tagger.tag(sentence))
